@@ -22,10 +22,10 @@ function FormSendMessage({ data }) {
                 sender: uid,
                 type: "text",
                 value: sendMessage,
-                isRead: false,
+                created_At: Date.now(),
               },
             ],
-            update_At: Date.now(),
+            updated_At: Date.now(),
           },
           { merge: true }
         ).catch((error) => console.log(error));
