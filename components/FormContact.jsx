@@ -26,10 +26,10 @@ function FormContact() {
               type: "text",
               value: message,
               isRead: false,
-              created_At: Date.now(),
-              update_At: Date.now(),
             },
           ],
+          created_At: Date.now(),
+          update_At: Date.now(),
         });
         setLoading(false);
       } catch (error) {

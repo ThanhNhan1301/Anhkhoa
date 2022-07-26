@@ -23,10 +23,9 @@ function FormSendMessage({ data }) {
                 type: "text",
                 value: sendMessage,
                 isRead: false,
-                created_At: Date.now(),
-                update_At: Date.now(),
               },
             ],
+            update_At: Date.now(),
           },
           { merge: true }
         ).catch((error) => console.log(error));
