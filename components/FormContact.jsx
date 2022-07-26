@@ -16,8 +16,8 @@ function FormContact() {
       try {
         setLoading(true);
         const docRef = doc(db, "Messages", uid);
-
         await setDoc(docRef, {
+          uid,
           displayName,
           phone,
           messages: [
