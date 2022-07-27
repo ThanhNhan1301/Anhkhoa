@@ -1,6 +1,7 @@
 import { doc, setDoc } from "firebase/firestore";
+import Link from "next/link";
 import React from "react";
-import { AiOutlineExpand, AiOutlineSend } from "react-icons/ai";
+import { AiOutlineExpand, AiOutlineSend, AiFillPhone } from "react-icons/ai";
 import Moment from "react-moment";
 import { db } from "../firebase/firestore";
 
@@ -41,11 +42,16 @@ function FormSendMessage({ data }) {
         onSubmit={handleSendMessage}
       >
         <div className="w-full text-start p-3 flex justify-start items-center">
-          <div className="flex-1 flex justify-start items-center gap-2">
-            <span className="h-10 w-10 bg_primary flex justify-center items-center rounded-full text-white">
-              AK
-            </span>
-            <span className="font-semibold">Anh Khoa</span>
+          <div className="w-full flex justify-between items-center">
+            <div className="flex-1 flex justify-start items-center gap-2">
+              <span className="h-10 w-10 bg_primary flex justify-center items-center rounded-full text-white">
+                AK
+              </span>
+              <span className="font-semibold">Anh Khoa</span>
+            </div>
+            <Link href="tel:+84909317151">
+              <AiFillPhone size={24} className="color_primary cursor-pointer" />
+            </Link>
           </div>
           <div className="color_primary cursor-pointer flex-shrink-0 hidden md:block">
             <AiOutlineExpand size={20} />
@@ -53,7 +59,8 @@ function FormSendMessage({ data }) {
         </div>
 
         <div
-          className="flex-1 bg-gray-50 w-full border-none outline-none 
+          className="flex-1 flex flex-col justify-end 
+          bg-gray-50 w-full border-none outline-none 
           px-2 py-4 overflow-y-scroll scroll_custom"
           id="content_messages"
         >
@@ -75,8 +82,8 @@ function FormSendMessage({ data }) {
                     {item.sender == "admin" && (
                       <div
                         className="w-9 h-9 bg_primary text-white flex justify-center items-center
-                    rounded-full shadow-md flex-shrink-0
-                  "
+                          rounded-full shadow-md flex-shrink-0
+                        "
                       >
                         <span>AK</span>
                       </div>
@@ -117,7 +124,7 @@ function FormSendMessage({ data }) {
             );
           })}
         </div>
-        <div className="mx-3 mb-3 rounded-md bg-white overflow-hidden">
+        <div className="mx-3 my-3 rounded-md bg-white overflow-hidden">
           <div className="rounded-md flex relative">
             <div className="flex-1 h-9 ">
               <input

@@ -35,7 +35,7 @@ function ContactMessage() {
       <p className="px-6 mt-2 italic text-[14px] color_primary w-full text-center leading-5">
         (Thông tin của khách hàng được chúng tôi bảo mật tuyệt đối.)
       </p>
-      <div className="w-full px-5 max-w-[450px] h-[450px] mt-10  m-auto">
+      <div className="w-full px-5 max-w-[450px] h-[500px] mt-10  m-auto">
         {!!dataMessages ? (
           <FormSendMessage data={dataMessages} />
         ) : (
