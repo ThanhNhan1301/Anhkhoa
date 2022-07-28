@@ -5,7 +5,14 @@ import React from "react";
 function Header() {
   return (
     <div className="w-full" id="header">
-      <div className="text-3xl font-semibold capitalize py-5 color_primary lg:px-5 z-20">
+      <div
+        className="
+        flex justify-start items-center gap-3
+        text-3xl font-semibold capitalize py-5 text-black lg:px-5 z-20"
+      >
+        <div className="w-12 h-12 relative rounded-md overflow-hidden">
+          <Image src="/logo.png" layout="fill" />
+        </div>
         <Link href="/">Anh Khoa</Link>
       </div>
       <div className="flex justify-between items-center md:flex-col-reverse">

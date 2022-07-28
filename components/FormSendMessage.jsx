@@ -4,6 +4,7 @@ import React from "react";
 import { AiOutlineExpand, AiOutlineSend, AiFillPhone } from "react-icons/ai";
 import Moment from "react-moment";
 import { db } from "../firebase/firestore";
+import Image from "next/image";
 
 function FormSendMessage({ data }) {
   const [sendMessage, setSendMessage] = React.useState("");
@@ -81,11 +82,15 @@ function FormSendMessage({ data }) {
                   <div className="flex items-center gap-2">
                     {item.sender == "admin" && (
                       <div
-                        className="w-9 h-9 bg_primary text-white flex justify-center items-center
-                          rounded-full shadow-md flex-shrink-0
+                        className="w-8 h-8 text-white rounded-full overflow-hidden 
+                        shadow-md flex-shrink-0 relative
                         "
                       >
-                        <span>AK</span>
+                        <Image
+                          src="/logo.png"
+                          className="w=full h-full"
+                          layout="fill"
+                        />
                       </div>
                     )}
                     <div
