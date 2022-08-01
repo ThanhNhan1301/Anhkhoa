@@ -20,10 +20,10 @@ function FormContact() {
           uid,
           displayName,
           phone,
+          received: false,
           messages: [
             {
               displayName,
-              received: false,
               sender: uid,
               type: "text",
               value: message,

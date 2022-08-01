@@ -18,11 +18,11 @@ function FormSendMessage({ data }) {
         await setDoc(
           docRef,
           {
+            received: false,
             messages: [
               ...data.messages,
               {
                 displayName: data.displayName,
-                received: false,
                 sender: uid,
                 type: "text",
                 value: sendMessage,
