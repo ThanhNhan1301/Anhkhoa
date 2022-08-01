@@ -22,6 +22,8 @@ function FormContact() {
           phone,
           messages: [
             {
+              displayName,
+              received: false,
               sender: uid,
               type: "text",
               value: message,

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { brand, logo, phoneNumber } from "../configs/main.json";
+import configsHeader from "../configs/header";
 
 function Header() {
   return (
@@ -11,9 +13,9 @@ function Header() {
         text-3xl font-semibold capitalize py-5 text-black lg:px-5 z-20"
       >
         <div className="w-12 h-12 relative rounded-md overflow-hidden">
-          <Image src="/logo.png" layout="fill" />
+          <Image src={logo} layout="fill" />
         </div>
-        <Link href="/">Anh Khoa</Link>
+        <Link href="/">{brand}</Link>
       </div>
       <div className="flex justify-between items-center md:flex-col-reverse">
         <div
@@ -22,27 +24,23 @@ function Header() {
           md:h-auto md:w-full md:py-5 
         "
         >
-          <p className="color_primary uppercase underline">Chúng tôi chuyên</p>
+          <p className="color_primary uppercase underline">
+            {configsHeader.strong}
+          </p>
           <div className="py-2">
-            <h3 className="uppercase text-2xl tracking-wider font-semibold leading-8">
-              Tư vấn nội thất
-            </h3>
-            <h3 className="uppercase text-2xl tracking-wider font-semibold leading-8">
-              Thiết kế - Sản xuất
-            </h3>
-            <h3 className="uppercase text-2xl tracking-wider font-semibold leading-8">
-              Sửa chữa Sofa
-            </h3>
+            {configsHeader.titles.map((item, index) => (
+              <h3
+                className="uppercase text-2xl tracking-wider font-semibold leading-8"
+                key={index}
+              >
+                {item}
+              </h3>
+            ))}
           </div>
           <p className="text-gray-500 text-justify mb-6 leading-6">
-            Hiện nay, các mẫu ghế sofa đẹp hiện đại đang là gợi ý số 1 dành cho
-            các phòng khách được thiết kế hiện đại trong các căn hộ cao cấp. Với
-            thiết kế bắt mắt, đa dạng về mẫu mã,... những mẫu ghế sofa hiện đại
-            giúp cho không gian phòng khách trở nên sang trọng, thanh lịch và
-            tinh tế hơn. Đến với chúng tôi quý khách sẽ có nhiều lựa chọn phù
-            hợp với nhu cầu và giá cả hợp lý nhất
+            {configsHeader.header_description}
           </p>
-          <Link href="tel:+84909317151">
+          <Link href={`tel:${phoneNumber}`}>
             <button className="px-6 h-[36px] bg_primary text-white font-thin rounded-sm shadow-md">
               Gọi cho chúng tôi
             </button>

@@ -21,6 +21,8 @@ function FormSendMessage({ data }) {
             messages: [
               ...data.messages,
               {
+                displayName: data.displayName,
+                received: false,
                 sender: uid,
                 type: "text",
                 value: sendMessage,
